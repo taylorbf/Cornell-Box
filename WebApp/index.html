@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Desktop Cassiopeia</title>
+	<script type="text/javascript" src="jquery.js"></script>
+</head>
+
+<body style="width:100%;height:100%;overflow:hidden">
+
+	<style>
+
+		body {
+			margin:0px;	
+			padding:0px;		
+		}
+
+		.token img {
+			width:100%;
+			display:block;
+		}
+
+
+	</style>
+    <div class="token">
+
+		<img src="images/piano.jpg" onclick="changeToken()">
+
+		<audio loop>
+		  	<source src="sound/nothing.mp3" type="audio/mpeg" />
+		  	Your browser does not support HTML5 audio.
+		</audio>
+
+	</div>
+
+
+	<script>
+
+
+		var tokens = [
+			{
+				image: "images/windchimes.jpg",
+				audio: "sound/nothing.mp3"
+			},
+			{
+				image: "images/windchimes.jpg",
+				audio: "sound/windchimes.mp3"
+			},
+			{
+				image: "images/clock.jpg",
+				audio: "sound/clock.mp3"
+			},
+			{
+				image: "images/piano.jpg",
+				audio: "sound/oneword1.mp3"
+			},
+			{
+				image: "images/key2.png",
+				audio: "sound/keys.mp3"
+			},
+			{
+				image: "images/bird.jpg",
+				audio: "sound/birds.mp3"
+			},
+			{
+				image: "images/piano.jpg",
+				audio: "sound/oneword2.mp3"
+			},
+			{
+				image: "images/rain.jpg",
+				audio: "sound/rain.mp3"
+			},
+			{
+				image: "images/doorknob.jpg",
+				audio: "sound/doorcreak.mp3"
+			},
+			{
+				image: "images/piano.jpg",
+				audio: "sound/oneword1.mp3"
+			},
+			{
+				image: "images/road.jpg",
+				audio: "sound/nothing.mp3"
+			},
+			{
+				image: "images/road.jpg",
+				audio: "sound/poem.mp3"
+			},
+		]
+
+		var i = 0;
+
+		var tokimg = $(".token img")[0];
+		var tokaud = $(".token audio")[0];
+
+
+		tokimg.src = tokens[i].image;
+		tokaud.src = tokens[i].audio;
+		tokaud.play();
+
+		function changeToken() {
+			i++;
+			if (i>=tokens.length) {
+				i=0;
+			}
+			tokimg.src = tokens[i].image;
+			tokaud.src = tokens[i].audio;
+			tokaud.play();
+
+		}
+
+	</script>
+
+
+
+</body>
+
+</html>
